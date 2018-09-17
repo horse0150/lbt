@@ -1,0 +1,44 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+spring:
+  application:
+    name: lbt-zuul
+zuul:
+  prefix: /api
+  routes:
+    serviceUser:
+      path: /user/**
+      serviceId: lbt-user
+    serviceTrade:
+      path: /trade/**
+      serviceId: lbt-trade
+  ignored-services: "*"
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+
+#熔断器配置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+
+
+
+
+
+

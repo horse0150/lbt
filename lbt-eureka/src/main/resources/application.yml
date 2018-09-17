@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: lbt-eureka
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+#  server:
+#    wait-time-in-ms-when-sync-empty: 5
+

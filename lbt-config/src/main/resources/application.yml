@@ -1,0 +1,25 @@
+#服务端口server
+server:
+  port: 8082
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://git.renwubang.cn/wangwenbin/imu-config.git
+          search-paths: imu
+          username: wangwenbin
+          password: horse0150!
+  application:
+    name: configServer
+  profiles:
+    active: dev
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
