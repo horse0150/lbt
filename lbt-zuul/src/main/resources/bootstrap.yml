@@ -19,22 +19,16 @@ zuul:
     serviceTrade:
       path: /trade/**
       serviceId: lbt-trade
-  ignored-services: "*"
+  #ignored-services: "*"
   host:
     connect-timeout-millis: 60000
     socket-timeout-millis: 60000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: routes,filters,hystrix
 
-#熔断器配置
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
-ribbon:
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
 
 
 

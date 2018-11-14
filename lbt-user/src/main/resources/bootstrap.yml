@@ -16,3 +16,5 @@ spring:
         service-id: configServer
         enabled: true
       label: master
+      username: user
+      password: pwd

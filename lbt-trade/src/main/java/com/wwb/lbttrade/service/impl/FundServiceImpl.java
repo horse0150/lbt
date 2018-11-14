@@ -81,7 +81,7 @@ public class FundServiceImpl implements FundService{
         if(StringUtils.isBlank(phone)){
             return null;
         }
-        String uri = String.format("http://localhost:9006/api/user/user/findByPhone/%s",phone);
+        String uri = String.format("http://lbt-user/user/findByPhone/%s",phone);
         ResponseEntity<User> user = restTemplate.exchange(uri, HttpMethod.GET,null,User.class);
         if(user != null && user.getBody() != null){
             Fund fund = new Fund();

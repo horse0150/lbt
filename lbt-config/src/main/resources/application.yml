@@ -6,14 +6,20 @@ spring:
     config:
       server:
         git:
-          uri: http://git.renwubang.cn/wangwenbin/imu-config.git
+          uri: http://git.hekonggroup.com/wangwenbin/imu-config.git
           search-paths: imu
           username: wangwenbin
           password: horse0150!
   application:
     name: configServer
-  profiles:
-    active: dev
+  security:
+    filter:
+      order: 1
+    user:
+      name: user
+      password: pwd
+#  profiles:
+#    active: dev
 eureka:
   instance:
     preferIpAddress: true
@@ -22,4 +28,7 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8080/eureka/
+
+
+
 

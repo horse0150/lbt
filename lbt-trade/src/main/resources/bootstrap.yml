@@ -19,6 +19,8 @@ spring:
         service-id: configServer
         enabled: true
       label: master
+      username: user
+      password: pwd
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
